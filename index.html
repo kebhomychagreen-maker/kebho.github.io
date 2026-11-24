@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="พอร์ตโฟลิโอสำหรับงานแอนิเมชันและภาพวาด">
+<title>Kebho — Portfolio</title>
+<style>
+:root{color-scheme:light;--bg:#fff;--ink:#111;--muted:#404040;--accent:#111;--edge:#d6d6d6}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+.wrap{width:min(1120px,91%);margin:auto}
+header,footer{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:24px 0;border-bottom:1px solid var(--edge)}
+.brand{font-family:Georgia,serif;font-size:23px}
+nav{display:flex;gap:22px;color:var(--muted);font-size:14px}
+nav a:hover,footer a:hover{color:var(--accent)}
+.hero{padding:78px 0 54px}
+h1,h2,h3,p{margin:0}
+h1{font:clamp(48px,10vw,116px)/1.05 Georgia,serif;letter-spacing:-.025em}
+h1 i{font-weight:400;color:var(--accent)}
+.hero-bottom{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-top:28px}
+.hero-bottom p,.description{color:var(--muted);line-height:1.7}
+.cta{background:#fff;color:#111;border:1px solid #111;padding:11px 16px;border-radius:2px;white-space:nowrap}
+section{scroll-margin-top:24px}
+.section-top{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:0 0 18px;border-top:1px solid var(--edge);padding-top:22px}
+h2{font:clamp(32px,5vw,58px)/1 Georgia,serif}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.filters button,.close{background:transparent;border:1px solid var(--edge);border-radius:2px;padding:8px 11px;font-size:13px}
+.filters button[aria-pressed=true]{background:#eee;color:#111;border-color:#111}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.project:first-child{grid-column:1/-1}
+.card{display:block;width:100%;border:0;background:none;padding:0;text-align:left}
+.card:hover .title{color:var(--accent)}
+.cover{display:block;width:100%;aspect-ratio:1.65;position:relative;overflow:hidden;isolation:isolate}
+.project:first-child .cover{aspect-ratio:2.65}
+.cover::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,#0000 0 3px,#180b0b22 4px 5px);pointer-events:none}
+.memory{background:radial-gradient(ellipse at 61% 47%,#a75542,#4c2935 38%,#1c1c2e 76%)}
+.memory::before{content:"";position:absolute;left:47%;top:14%;width:27%;height:60%;border:2px solid #f6ad8c;box-shadow:0 0 24px #ff927770,inset 0 0 24px #ff927744,26px 19px 0 -1px #dd8e6966;transform:skewY(-9deg);background:linear-gradient(143deg,#fff0 36%,#ffd4b83b 37% 44%,#fff0 45%)}
+.moon{background:radial-gradient(circle at 50% 44%,#f8db9d 0 18%,transparent 18.4%),linear-gradient(#344937,#82936e)}
+.moon::before{content:"";position:absolute;inset:0;background:#192d28;clip-path:polygon(0 61%,17% 53%,31% 70%,55% 64%,72% 80%,89% 55%,100% 62%,100% 100%,0 100%)}
+.study{background:linear-gradient(135deg,#a75c53,#532f46)}
+.study::before{content:"";position:absolute;inset:15% 28%;border:1px solid #f9c5aa;background:repeating-radial-gradient(ellipse at 42% 64%,#f2b195 0 1px,transparent 2px 9px);transform:rotate(-14deg);border-radius:50%}
+.caption{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0 18px;border-bottom:1px solid var(--edge)}
+.caption small{display:block;color:var(--muted);margin-bottom:4px}
+h3,.title{font-size:clamp(17px,3vw,25px);font-weight:600}
+.arrow{font-size:24px;color:var(--accent)}
+.about{margin:56px 0;display:grid;grid-template-columns:1fr 1fr;gap:16px;border-top:1px solid var(--edge);padding-top:24px}
+footer{border-top:1px solid var(--edge);border-bottom:0;font-size:14px;color:var(--muted)}
+dialog{width:min(640px,92vw);max-height:90dvh;overflow:auto;background:#fff;color:var(--ink);border:1px solid var(--edge);padding:20px}
+dialog::backdrop{background:#090807c9}
+.dialog-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}
+dialog .description{margin-top:14px}
+[hidden]{display:none!important}
+@media(max-width:600px){.hero{padding:55px 0 36px}.section-top,.hero-bottom{align-items:start;flex-direction:column}.grid,.about{grid-template-columns:1fr}.project:first-child .cover{aspect-ratio:1.65}.caption{padding-bottom:12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body id="top">
+<div class="wrap">
+<header><a class="brand" href="#top">Kebho</a><nav aria-label="เมนูหลัก"><a href="#work">ผลงาน</a><a href="#about">เกี่ยวกับพอร์ต</a></nav></header>
+<main>
+<div class="hero">
+<h1>Kebho<br><i>Portfolio</i></h1>
+<div class="hero-bottom"><p>พอร์ตโฟลิโอแอนิเมชันและภาพวาด</p><a class="cta" href="#work">ดูผลงาน ↓</a></div>
+</div>
+<section id="work" aria-labelledby="work-title">
+<div class="section-top"><h2 id="work-title">Selected Work</h2><div class="filters" role="group" aria-label="กรองหมวดผลงาน"><button aria-pressed="true" data-filter="all">ทั้งหมด</button><button aria-pressed="false" data-filter="animation">Animation</button><button aria-pressed="false" data-filter="illustration">Illustration</button></div></div>
+<div class="grid">
+<!-- เพิ่มผลงานโดยคัดลอก article แล้วใส่ภาพปกและคำอธิบายของโปรเจกต์ -->
+<article class="project" data-category="animation"><button class="card" type="button" data-description="แนวคิดแอนิเมชัน 2D เกี่ยวกับตัวละครที่หยิบกรอบรูปเพื่อนวัยเด็กขึ้นมาดู แล้วถูกพาเข้าไปในโลกความทรงจำ ภาพปกนี้เป็นภาพประกอบตัวอย่าง"><span class="cover memory" aria-hidden="true"></span><span class="caption"><span><small>Animation · แนวคิดโปรเจกต์</small><strong class="title">Memory / Glitch</strong></span><span class="arrow" aria-hidden="true">↗</span></span></button></article>
+<article class="project" data-category="illustration"><button class="card" type="button" data-description="ตัวอย่างการจัดหน้าสำหรับภาพวาดฉากและทิวทัศน์ สามารถแทนที่ด้วยภาพจริงพร้อมคำอธิบายแนวคิดและเทคนิคที่ใช้"><span class="cover moon" aria-hidden="true"></span><span class="caption"><span><small>Illustration · ตัวอย่าง</small><strong class="title">Moonlit Landscape</strong></span><span class="arrow" aria-hidden="true">↗</span></span></button></article>
+<article class="project" data-category="illustration"><button class="card" type="button" data-description="ตัวอย่างการจัดหน้าสำหรับภาพสเก็ตช์หรืองานทดลองเรื่องเส้นและรูปทรง"><span class="cover study" aria-hidden="true"></span><span class="caption"><span><small>Illustration · ตัวอย่าง</small><strong class="title">Line Study</strong></span><span class="arrow" aria-hidden="true">↗</span></span></button></article>
+</div>
+</section>
+<section class="about" id="about"><h2>About</h2><p class="description">พื้นที่สำหรับจัดแสดงแอนิเมชัน 2D ภาพสเก็ตช์ และภาพวาดดิจิทัล ตั้งแต่แนวคิดแรกจนถึงชิ้นงานสำเร็จ</p></section>
+</main>
+<footer><span>Kebho</span><a href="#top">กลับขึ้นด้านบน ↑</a></footer>
+</div>
+<dialog aria-labelledby="project-title"><div class="dialog-top"><h3 id="project-title"></h3><form method="dialog"><button class="close">ปิด</button></form></div><div id="project-cover"></div><p class="description" id="project-description"></p></dialog>
+<script>
+const filters = document.querySelectorAll('[data-filter]');
+const projects = document.querySelectorAll('.project');
+for (const filter of filters) {
+  filter.addEventListener('click', () => {
+    for (const option of filters) option.setAttribute('aria-pressed', String(option === filter));
+    for (const project of projects) {
+      project.hidden = filter.dataset.filter !== 'all' && project.dataset.category !== filter.dataset.filter;
+    }
+  });
+}
+const dialog = document.querySelector('dialog');
+for (const card of document.querySelectorAll('.card')) {
+  card.addEventListener('click', () => {
+    document.querySelector('#project-title').textContent = card.querySelector('.title').textContent;
+    document.querySelector('#project-cover').replaceChildren(card.querySelector('.cover').cloneNode(true));
+    document.querySelector('#project-description').textContent = card.dataset.description;
+    dialog.showModal();
+  });
+}
+</script>
+</body>
+</html>
